@@ -234,14 +234,30 @@ This endpoint either creates a new question or returns search results.
         }'`<br>
 
         {
+            "categories": {
+                "1": "Science", 
+                "2": "Art", 
+                "3": "Geography", 
+                "4": "History", 
+                "5": "Entertainment", 
+                "6": "Sports"
+            }, 
             "message": "Question successfully created!", 
-            "success": true
-        }
-
-        {
-            "created": 173, 
-            "question_created": "Which US state contains an area known as the Upper Penninsula?", 
             "questions": [
+                {
+                    "answer": "Maya Angelou", 
+                    "category": 4, 
+                    "difficulty": 2, 
+                    "id": 5, 
+                    "question": "Whose autobiography is entitled 'I Know Why the Caged Bird Sings'?"
+                }, 
+                {
+                    "answer": "Muhammad Ali", 
+                    "category": 4, 
+                    "difficulty": 1, 
+                    "id": 9, 
+                    "question": "What boxer's original name is Cassius Clay?"
+                }, 
                 {
                     "answer": "Apollo 13", 
                     "category": 5, 
@@ -255,13 +271,6 @@ This endpoint either creates a new question or returns search results.
                     "difficulty": 4, 
                     "id": 4, 
                     "question": "What actor did author Anne Rice first denounce, then praise in the role of her beloved Lestat?"
-                }, 
-                {
-                    "answer": "Muhammad Ali", 
-                    "category": 4, 
-                    "difficulty": 1, 
-                    "id": 9, 
-                    "question": "What boxer's original name is Cassius Clay?"
                 }, 
                 {
                     "answer": "Brazil", 
@@ -304,26 +313,18 @@ This endpoint either creates a new question or returns search results.
                     "difficulty": 2, 
                     "id": 15, 
                     "question": "The Taj Mahal is located in which Indian city?"
-                }, 
-                {
-                    "answer": "Escher", 
-                    "category": 2, 
-                    "difficulty": 1, 
-                    "id": 16, 
-                    "question": "Which Dutch graphic artist\u2013initials M C was a creator of optical illusions?"
                 }
             ], 
             "success": true, 
-            "total_questions": 20
+            "total_questions": 158
         }
-
 
 2. If search term <strong>is</strong> included in request:
 
 * General:
   * Searches for questions using search term in JSON request parameters.
   * Returns JSON object with paginated matching questions.
-* Sample: `curl http://127.0.0.1:5000/questions -X POST -H "Content-Type: application/json" -d '{"searchTerm": "which"}'`<br>
+* Sample: `curl http://127.0.0.1:5000/questions/search -X POST -H "Content-Type: application/json" -d '{"searchTerm": "which"}'`<br>
 
         {
             "questions": [
@@ -380,12 +381,12 @@ This endpoint either creates a new question or returns search results.
                     "answer": "Michigan", 
                     "category": 3, 
                     "difficulty": 3, 
-                    "id": 173, 
+                    "id": 164, 
                     "question": "Which US state contains an area known as the Upper Penninsula?"
                 }
             ], 
             "success": true, 
-            "total_questions": 18
+            "total_questions": 159
         }
 
 #### GET /categories/\<int:id\>/questions
@@ -418,10 +419,59 @@ This endpoint either creates a new question or returns search results.
                     "difficulty": 4, 
                     "id": 22, 
                     "question": "Hematology is a branch of medicine involving the study of what?"
+                }, 
+                {
+                    "answer": "This is a mock answer", 
+                    "category": 1, 
+                    "difficulty": 1, 
+                    "id": 24, 
+                    "question": "This is a mock question"
+                }, 
+                {
+                    "answer": "This is a mock answer", 
+                    "category": 1, 
+                    "difficulty": 1, 
+                    "id": 25, 
+                    "question": "This is a mock question"
+                }, 
+                {
+                    "answer": "This is a mock answer", 
+                    "category": 1, 
+                    "difficulty": 1, 
+                    "id": 26, 
+                    "question": "This is a mock question"
+                }, 
+                {
+                    "answer": "This is a answer", 
+                    "category": 1, 
+                    "difficulty": 1, 
+                    "id": 27, 
+                    "question": "This is a question"
+                }, 
+                {
+                    "answer": "This is a answer", 
+                    "category": 1, 
+                    "difficulty": 1, 
+                    "id": 28, 
+                    "question": "This is a question"
+                }, 
+                {
+                    "answer": "This is a answer", 
+                    "category": 1, 
+                    "difficulty": 1, 
+                    "id": 30, 
+                    "question": "This is a question"
+                }, 
+                {
+                    "answer": "This is a answer", 
+                    "category": 1, 
+                    "difficulty": 1, 
+                    "id": 31, 
+                    "question": "This is a question"
                 }
             ], 
             "success": true, 
-            "total_questions": 18
+            "total_questions": 159
         }
 
 #### POST /quizzes
@@ -435,12 +485,11 @@ This endpoint either creates a new question or returns search results.
 
         {
             "question": {
-                "answer": "Blood", 
+                "answer": "This is a mock test answer.", 
                 "category": 1, 
-                "difficulty": 4, 
-                "id": 22, 
-                "question": "Hematology is a branch of medicine involving the study of what?"
+                "difficulty": 1, 
+                "id": 61, 
+                "question": "This is a mock test question."
             }, 
             "success": true
         }
-# Trivia-API

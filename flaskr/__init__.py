@@ -168,8 +168,8 @@ def create_app(test_config=None):
         # Get all categories and add to dictionary
         categories = Category.query.all()
         categories_dict = {}
-        for category in categories:
-            categories_dict[category.id] = category.type
+        for cat in categories:
+            categories_dict[cat.id] = cat.type
 
         # Validate to ensure no data is empty
         if ((question == '') or (answer == '') or
